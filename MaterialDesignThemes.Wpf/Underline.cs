@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using MaterialDesignThemes.Wpf.Transitions;
 
 namespace MaterialDesignThemes.Wpf
@@ -13,7 +7,7 @@ namespace MaterialDesignThemes.Wpf
     /// <summary>
     /// 
     /// </summary>
-    [TemplateVisualState(GroupName="ActivationStates", Name = ActiveStateName)]
+    [TemplateVisualState(GroupName = "ActivationStates", Name = ActiveStateName)]
     [TemplateVisualState(GroupName = "ActivationStates", Name = InactiveStateName)]
     public class Underline : Control
     {
@@ -38,6 +32,16 @@ namespace MaterialDesignThemes.Wpf
         {
             get { return (bool)GetValue(IsActiveProperty); }
             set { SetValue(IsActiveProperty, value); }
+        }
+
+        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
+            nameof(CornerRadius), typeof(CornerRadius), typeof(Underline),
+            new FrameworkPropertyMetadata(new CornerRadius(0), FrameworkPropertyMetadataOptions.AffectsRender, null));
+
+        public CornerRadius CornerRadius
+        {
+            get { return (CornerRadius)GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
         }
 
         public override void OnApplyTemplate()

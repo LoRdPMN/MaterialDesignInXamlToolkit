@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:MaterialDesignThemes.Wpf.Themes"
                     xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf"
                     xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters">
 
@@ -100,6 +99,7 @@
                                         Foreground="{TemplateBinding IconForeground}"
                                         FontSize="17"
                                         FontWeight="Regular"
+                                        IsTabStop="False"
                                         Visibility="{TemplateBinding Icon, Converter={StaticResource NullableToVisibilityConverter}}"
                                         VerticalAlignment="Center"
                                         VerticalContentAlignment="Center"
@@ -123,6 +123,7 @@
                                         ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                         ContentStringFormat="{TemplateBinding ContentTemplateSelector}"                                        
                                         x:Name="TextBlock"
+                                        IsTabStop="False"
                                         VerticalAlignment="Center"
                                         Margin="8 0 12 0"
                                         Grid.Column="1"/>
